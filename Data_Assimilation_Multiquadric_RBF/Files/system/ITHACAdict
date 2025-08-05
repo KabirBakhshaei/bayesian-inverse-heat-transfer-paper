@@ -1,0 +1,94 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.2                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      ITHACAdict;
+}
+
+thermalConductivity 3.0;           // K                      w/(m*k)
+density             5.0;           // Ro                     kg/m^3
+specificHeat        20.0;          // Cp (heat capacity)     J/(kg*K)
+heatTranferCoeff    5.66e4;        // h                      w/(m^2*k)
+// thermal diffusion =             // Alpha = K/(Ro*Cp)      m^2/s
+
+
+Tf                  350.0;         // Water temperature (76.85 +273.15) = 350  Kelvin
+initialField        400.0;         // 126.85 + 273.15 = 400                    Kelvin,      In 0 folder, T file, initialField is 0,
+
+// Heat Flux Parameters
+maxFrequency        0.1;           //                         Hz
+a                   150;           //                         w/(m^2*s)
+b                   200;           //                         w/(m^2*s)
+c                   300;           //                         w/(m^2*s)
+
+measNoiseCov        0.0001;
+modelErrorCov       0.5;
+
+stateInitialCov     10;
+parameterPriorCov   1000;          // Kabir: Inside the code, it is calculated by taking a (20%) percent of parameterPriorMean
+
+scaleOfFactor       0.2;
+                                   //  Kabir: For the covariance of the prior weights, we can take, for example, 20 percent of the weight prior mean(parameterPriorMean) by defining scaleFactor
+                                          // Setting the mean of the probability distribution of the weights equal to the projection. 
+                                          // Then the variance is getting as a function of the mean (20 percent of the mean). somehow to expect seeing some narrowing of the probability distribution along the mean. 
+                                         // Eigen::MatrixXd parameterPriorCov = Eigen::MatrixXd::Identity(parameterSize, parameterSize) * parameterCov;
+
+NheatFluxPODbasis   100;           // This is for POD and not used for RBF 
+
+EnKF_innerLoop      2;             // Pre-set maximum iteration number in the EnSISF-wDF algorithm
+
+
+sizeOfTheParameter  5;            // This is the number of parameters or weights
+//Nofsamples          400;        // Kabir: All the ensemble-based methods, in general, tend to converge as we increase the number of samples. 
+                                          // Therefore, the number of samples should be as high as possible (the more sample we have usually the more accurate).
+
+basisofShapeParameter 3;          // Kabir: We can operate on this geometrical parameter(shape of RBS) to check it is good enough.
+                                         // Kabir: if the value of the shape parameter is high, it means that the width of the Gaussian function is low, and vice versa.
+                                         // Kabir: the shape parameter controls the spread or width of the Gaussian function.
+// 5 out of 100
+thermocoupleCoordinates
+{
+    XValues (0.182 0.182 1.092 1.82 1.82);
+    ZValues (0.110 1.1 0.55 0.11 1.1);
+    YValues (0.02 0.02 0.02 0.02 0.02);
+}
+    
+    // 4 out of 25
+    // XValues (0.182 0.91 0.91 1.638);
+    // ZValues (0.55 0.33 0.77 0.55);
+    // YValues (0.02 0.02 0.02 0.02);
+
+    // 5 out of 25
+    // XValues (0.182 0.182 0.91 1.638 1.638);
+    // ZValues (0.11 0.99 0.55 0.11 0.99);
+    // YValues (0.02 0.02 0.02 0.02 0.02);
+
+    // 9 out of 25
+    // XValues (0.182 0.182 0.546 0.546 0.91 1.274 1.274 1.638 1.638);
+    // ZValues (0.11 0.99 0.33 0.77 0.55 0.33 0.77 0.11 0.99);
+    // YValues (0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02);
+
+    // 5 out of 100
+    // XValues (0.182 0.182 1.092 1.82 1.82);
+    // ZValues (0.110 1.1 0.55 0.11 1.1);
+    // YValues (0.02 0.02 0.02 0.02 0.02);
+
+    // 20 out of 100
+    // XValues (0.182 0.182 0.364 0.364 0.546 0.546 0.728 0.728 0.91 0.91 1.092 1.092 1.274 1.274 1.456 1.456 1.638 1.638 1.82 1.82);
+    // ZValues (0.11 1.1 0.22 0.99 0.33 0.88 0.44 0.77 0.55 0.66 0.55 0.66 0.44 0.66 0.33 0.88 0.22 0.99 0.11 1.1);
+    // YValues (0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.02);
+
+    // 6 out of 100
+    // XValues (0.364 0.364 0.91 0.91 1.638 1.638);
+    // ZValues (0.33 0.88 0.33 0.88 0.33 0.88);
+    // YValues (0.02 0.02 0.02 0.02 0.02 0.02);
+
