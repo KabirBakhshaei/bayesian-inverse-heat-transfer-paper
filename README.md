@@ -1,9 +1,8 @@
 # Bayesian Inverse Heat Transfer Paper (Data Assimilation Framework)
 
-This repository provides all the necessary code and data to reproduce the results presented in our paper on Bayesian inverse heat transfer using data assimilation. It includes Gaussian and Multiquadric RBF-based reconstructions, visualization scripts, and reproducible containerized environments using **Docker** or **Singularity**.
+This repository provides all the necessary code and data to reproduce the results presented in our paper entitled "Optimized Bayesian Framework for Inverse Heat Transfer Problems Using Reduced Order Method". It includes Gaussian and Multiquadric RBF-based reconstructions, visualization scripts, and reproducible containerized environments using **Docker** or **Singularity**.
 
 ---
-
 ## Repository Structure
 ```
 .
@@ -35,21 +34,25 @@ This project uses a **pre-configured container** that includes:
 
 ##  Step-by-Step Instructions
 
-### 1. Clone this repository
+### 1A. Clone this repository and move into the cloned repository
 ```bash
 git clone https://github.com/KabirBakhshaei/bayesian-inverse-heat-transfer-paper
 cd bayesian-inverse-heat-transfer-paper
+```
+### 1B. Save the absolute path of this folder into a shell variable (used for folder mounting)
+```bash
 path_files=$(pwd)
 ```
 
 ## If You're Using Docker
-### 2A. Pull the Docker image
+### 2A. Pull (download) the pre-built Docker image
+The following code was copied from this link "hub.docker.com/r/ithacafv/openfoam2106-muq2-pytorch"
 ```
 docker pull ithacafv/openfoam2106-muq2-pytorch
 ```
-### 3A. Start a Docker container and mount the repo folder
+### 3A. Create and Start a Docker container and mount the repo folder
 ```
-docker run -it -v $path_files:/data/paper_respository ithacafv/openfoam2106-muq2-pytorch:latest bash
+docker run -i -t -v $path_files:/data/paper_respository  ithacafv/openfoam2106-muq2-pytorch:latest bash
 ```
 ## If You're Using Singularity (e.g., SISSA Workstations)
 ### 2B. Load Singularity
@@ -77,7 +80,13 @@ source etc/bashrc
 ### 6. Navigate back to the mounted repo
 ```
 cd ../paper_respository
+
 ```
+
+
+
+
+
 Once data is generated, postprocessing should be done outside Docker/Singularity using Python, and MATLAB.
 
 ## 📊 Postprocessing Guide
@@ -158,7 +167,9 @@ Once data is generated, postprocessing should be done outside Docker/Singularity
 
 - Produces:
   - Figures analogous to the Multiquadric RBF setup:  
-    `Figure 11A`–`Figure 14d`
+    `Figure 11A, 12A, 13A`–`Figure 14a, 14C, 14D`
+  - `3D Combined surface plot.avi`
+  - `3D Combined surface plot.gif`
 
 ---
 
@@ -189,7 +200,7 @@ The `requirements.txt` file specifies:
 
 - Python version
 - MATLAB version
-- Required libraries with pinned versions
+- Required libraries
 
 
 
