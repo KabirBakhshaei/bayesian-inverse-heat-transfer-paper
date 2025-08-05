@@ -89,11 +89,11 @@ cd ../paper_respository
 
 Once data is generated, postprocessing should be done outside Docker/Singularity using Python, and MATLAB.
 
-## 📊 Postprocessing Guide
+## Postprocessing Guide
 
 ### Inside `Data_Assimilation_Multiquadric_RBF/Files/`
 
-#### ✅ `plots.ipynb`
+#### `plots.ipynb`
 
 - **Reads:**
   - From `./ITHACAoutput/true/`:  
@@ -138,20 +138,20 @@ Once data is generated, postprocessing should be done outside Docker/Singularity
     - `xyz.txt`  
     - `Temp.txt`
 
-#### ✅ `Surface3DAnimation.m`
+#### `Surface3DAnimation.m`
 
 - **Creates (to `../Results/`):**
   - `3D Combined surface plot.avi`
   - `3D Combined surface plot.gif`
 
-#### ✅ `ContourFigurePaperMultiquadricRelative.m`
+#### `ContourFigurePaperMultiquadricRelative.m`
 
 - **Creates (to `../Results/`):**
   - `Figure 14b SnapshotCountorsMultiquadric.png`  
   - `Figure 14C SnapshotCountorsTrue.png`  
   - `Figure 14e SnapshotCountorsMultiquadricRelative.png`
 
-#### ✅ `RBFsThermocouples.m`
+#### `RBFsThermocouples.m`
 
 - **Creates (to `../Results/`):**
   - `Figure 2 Thermocouples_RBF_Centers.png`
@@ -175,7 +175,7 @@ Once data is generated, postprocessing should be done outside Docker/Singularity
 
 ### Inside `SupplementaryImages/Files/`
 
-#### ✅ `RBFsComparison.m`
+#### `RBFsComparison.m`
 
 - **Reads (from local folder):**
   - `xyz.txt`
@@ -194,7 +194,7 @@ Once data is generated, postprocessing should be done outside Docker/Singularity
 
 ---
 
-## 💻 requirements.txt
+## requirements.txt
 
 The `requirements.txt` file specifies:
 
