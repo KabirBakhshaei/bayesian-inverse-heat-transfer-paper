@@ -46,14 +46,14 @@ path_files=$(pwd)
 
 ## If You're Using Docker
 ### 2A. Pull (download) the pre-built Docker image
-The following code was copied from this [link](https://hub.docker.com/r/ithacafv/openfoam2106-muq2-pytorch).
+The following code was copied from this [link](https://hub.docker.com/r/ithacafv/openfoam2412-muq2-pytorch).
 
 ```
-docker pull ithacafv/openfoam2106-muq2-pytorch
+docker pull ithacafv/openfoam2412-muq2-pytorch
 ```
 ### 3A. Create and start a Docker container based on the downloaded image and share the repo folder with that container
 ```
-docker run -i -t -v $path_files:/data/paper_respository  ithacafv/openfoam2106-muq2-pytorch:latest bash
+docker run -i -t -v $path_files:/data/paper_respository  ithacafv/openfoam2412-muq2-pytorch:latest bash
 ```
 ## If You're Using Singularity (e.g., SISSA Workstations)
 ### 2B. Load Singularity
@@ -62,11 +62,11 @@ module load singularity
 ```
 ### 3B. Pull the Docker image as a Singularity .sif file
 ```
-singularity pull docker://ithacafv/openfoam2106-muq2-pytorch
+singularity pull docker://ithacafv/openfoam2412-muq2-pytorch
 ```
 ### 4B. Run the container and mount the paper repo
 ```
-singularity shell --bind $path_files:/data/paper_repository openfoam2106-muq2-pytorch_latest.sif
+singularity shell --bind $path_files:/data/paper_repository openfoam2412-muq2-pytorch_latest.sif
 ```
 
 ## Inside the Container (Linux Environment)
