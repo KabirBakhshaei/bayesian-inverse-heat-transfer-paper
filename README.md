@@ -87,21 +87,19 @@ source etc/bashrc
 cd ../paper_respository
 ```
 
-### 7. Navigate to Data_Assimilation_Multiquadric_RBF/Files/ or Data_Assimilation_Gaussian_RBF/Files/ run the following to run the simulation
+### 7. Navigate to the Simulation Directory and Run the Solver 
 ```
-of2212 for loading openfoam
-module load muq for loading module muq
-wmake
-blockMesh >& 
+cd Data_Assimilation_Multiquadric_RBF/Files/
+# or
+cd Data_Assimilation_Gaussian_RBF/Files/
 ```
-
-
-
-
-
-
-
-
+Then load the required modules and compile/run the simulation:
+```
+of2212            # Load OpenFOAM environment (version 2212)
+module load muq   # Load MUQ module
+wmake             # Compile the solver
+06enKFwDF_3dIHTP  # Run the solver 
+```
 Once data is generated, postprocessing should be done outside Docker/Singularity using Python, and MATLAB.
 
 ## Postprocessing Guide
@@ -216,6 +214,14 @@ The `requirements.txt` file specifies:
 - Python version
 - MATLAB version
 - Required libraries
+---
+
+## Zenodo Archive
+
+This repository is archived and citable via Zenodo.  
+Click the badge below to access the DOI and download the versioned release:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
 
 
