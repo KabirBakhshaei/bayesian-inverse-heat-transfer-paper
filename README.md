@@ -87,6 +87,13 @@ source etc/bashrc
 cd ../paper_respository
 ```
 
+### 7. Navigate to Data_Assimilation_Multiquadric_RBF/Files/ or Data_Assimilation_Gaussian_RBF/Files/ run the following to run the simulation
+```
+of2212 for loading openfoam
+module load muq for loading module muq
+wmake
+blockMesh >& 
+```
 
 
 
