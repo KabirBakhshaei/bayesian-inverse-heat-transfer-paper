@@ -96,7 +96,7 @@ cd Data_Assimilation_Gaussian_RBF/Files/
 ```
 Then load the required modules and compile/run the simulation:
 ```
-of2212            # Load OpenFOAM environment (version 2212)
+source /usr/lib/openfoam/openfoam2412/etc/bashrc            # Load OpenFOAM environment (version 2212)
 module load muq   # Load MUQ module
 wmake             # Compile the solver
 06enKFwDF_3dIHTP  # Run the solver 
