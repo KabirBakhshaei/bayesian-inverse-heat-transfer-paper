@@ -98,6 +98,7 @@ Then load the required modules and compile/run the simulation:
 ```
 source /usr/lib/openfoam/openfoam2412/etc/bashrc            # Load OpenFOAM environment (version 2212)
 # module load muq   # Load MUQ module, already pre-installed and linked inside the Docker/Singularity image
+source /data/paper_repository/ITHACA-FV/etc/bashrc # Then load ITHACA-FV environment
 wmake             # Compile the solver
 06enKFwDF_3dIHTP  # Run the solver 
 ```
