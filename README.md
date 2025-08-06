@@ -79,7 +79,8 @@ git clone --depth 1 https://github.com/ITHACA-FV/ITHACA-FV
 ```
 cd ITHACA-FV
 git submodule update --init
-source etc/bashrc
+source /usr/lib/openfoam/openfoam2412/etc/bashrc
+# source etc/bashrc
 ./Allwmake -tauq
 ```
 ### 6. Navigate back to the mounted repo
