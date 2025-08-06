@@ -1,6 +1,6 @@
 # Bayesian Inverse Heat Transfer Paper (Data Assimilation Framework)
 
-This repository provides all the necessary code and data to reproduce the results presented in our paper entitled "Optimized Bayesian Framework for Inverse Heat Transfer Problems Using Reduced Order Method". It includes Gaussian and Multiquadric RBF-based reconstructions, visualization scripts, and reproducible containerized environments using **Docker** or **Singularity**.
+This repository provides all the necessary code and data to reproduce the results presented in our paper entitled **Optimized Bayesian Framework for Inverse Heat Transfer Problems Using Reduced Order Method**. It includes Gaussian and Multiquadric RBF-based reconstructions, visualization scripts, and reproducible containerized environments using **Docker** or **Singularity**.
 
 ---
 ## Repository Structure
@@ -46,11 +46,12 @@ path_files=$(pwd)
 
 ## If You're Using Docker
 ### 2A. Pull (download) the pre-built Docker image
-The following code was copied from this link "hub.docker.com/r/ithacafv/openfoam2106-muq2-pytorch"
+The following code was copied from this [link](https://hub.docker.com/r/ithacafv/openfoam2106-muq2-pytorch).
+
 ```
 docker pull ithacafv/openfoam2106-muq2-pytorch
 ```
-### 3A. Create and Start a Docker container and mount the repo folder
+### 3A. Create and start a Docker container based on the downloaded image and share the repo folder with that container
 ```
 docker run -i -t -v $path_files:/data/paper_respository  ithacafv/openfoam2106-muq2-pytorch:latest bash
 ```
@@ -67,11 +68,15 @@ singularity pull docker://ithacafv/openfoam2106-muq2-pytorch
 ```
 singularity shell --bind $path_files:/data/paper_repository openfoam2106-muq2-pytorch_latest.sif
 ```
+
 ## Inside the Container (Linux Environment)
-### 5. Clone and build ITHACA-FV with MUQ support
+### 5A. Clone ITHACA-FV inside the container
 ```
 cd /data/paper_respository
 git clone --depth 1 https://github.com/ITHACA-FV/ITHACA-FV
+```
+### 5B.Compile ITHACA-FV with MUQ support
+```
 cd ITHACA-FV
 git submodule update --init
 source etc/bashrc
@@ -80,8 +85,11 @@ source etc/bashrc
 ### 6. Navigate back to the mounted repo
 ```
 cd ../paper_respository
-
 ```
+
+
+
+
 
 
 
@@ -95,7 +103,7 @@ Once data is generated, postprocessing should be done outside Docker/Singularity
 
 #### `plots.ipynb`
 
-- **Reads:**
+- **Reads the following as inputs:**
   - From `./ITHACAoutput/true/`:  
     - `trueTimeVec_mat.txt`  
     - `probe_true_mat.txt`
