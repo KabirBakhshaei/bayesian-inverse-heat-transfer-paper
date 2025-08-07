@@ -14,7 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-observationDeltaTimesteps 2;   
+observationDeltaTimesteps 4;   
 observationStartTimestep  1;  
 
 positions
