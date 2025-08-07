@@ -246,7 +246,7 @@ class TutorialUQ5 : public ITHACAmuq::Fang2017filter_wDF
 
 int main(int argc, char* argv[])
 {
-    int Nsamples = 300; // Kabir: All the ensemble-based methods, in general, tend to converge as we increase the number of samples. Therefore, the number of samples should be as high as possible (the more sample we have usually the more accurate).
+    int Nsamples = 375; // Kabir: All the ensemble-based methods, in general, tend to converge as we increase the number of samples. Therefore, the number of samples should be as high as possible (the more sample we have usually the more accurate).
     
     TutorialUQ5 example(argc, argv, Nsamples);
 
