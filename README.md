@@ -106,9 +106,9 @@ blockMesh
 ```
 ### 8. After finishing running, the following files and folder will be created 
 ```
-Folders:
+**Folders**:
   ITHACAoutput/
-Files:
+**Files**:
   B.npy
   Btemp.npy
   condNumber.txt
