@@ -109,7 +109,7 @@ cd Data_Assimilation_Gaussian_RBF/Files/
 ```
 Open the file
 ```ITHACA-FV-KF/src/ITHACA_FOMPROBLEMS/sequentialIHTP/sequentialIHTP.C```
-inside the file, commant out the line marked ```kabir``` and uncommand the line marked with```unkabir```to switch the configuration to Gaussian RBF mode. 
+inside the file, commant out the line marked ```heatFluxSpaceBasis[funcI][faceI] = Foam::sqrt(1 + (shapeParameter * radius) * (shapeParameter * radius));``` and uncommand the line marked with```heatFluxSpaceBasis[funcI][faceI] = Foam::exp(-1.0 * (shapeParameter * shapeParameter) * (radius * radius));```to switch the configuration to Gaussian RBF mode. 
 This change toggles the reconstruction kernel used by the solver from multiquadric to Gaussian. Recompile ITHACA-FV and Run the simulation as done previously:
 
 ### 8. Generated Output Files and Folders After Simulation
