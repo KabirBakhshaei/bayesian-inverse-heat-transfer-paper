@@ -104,11 +104,11 @@ wmake             # Compile the solver
 blockMesh
 06enKFwDF_3dIHTP  # Run the solver 
 ```
-### 8. After finishing running, the following files and folder will be created 
+### 8. Generated Output Files and Folders After Simulation
 ```
-**Folders**:
+**Folders:**
   ITHACAoutput/
-**Files**:
+**Files:**
   B.npy
   Btemp.npy
   condNumber.txt
