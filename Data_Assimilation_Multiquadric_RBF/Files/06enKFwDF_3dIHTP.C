@@ -147,7 +147,7 @@ class TutorialUQ5 : public ITHACAmuq::Fang2017filter_wDF
             //exit(0);
             Eigen::VectorXd result = Temp.fullPivLu().solve(B);                                      // w = (Q*Q')^-1 * Q * q''   Kabir X[5,1]= temp^-1[5,5] * B[5,1] 
             cnpy::save(result, "parameterPriorMeanWithoutShifting.npy"); 
-            double ShiftingWeightFactor = 0.05;                 // It must be in the range [0, 1] where 0 corresponds to no modification, and 1 corresponds to increasing each element by 100%.
+            double ShiftingWeightFactor = 0.3;                 // It must be in the range [0, 1] where 0 corresponds to no modification, and 1 corresponds to increasing each element by 100%.
             // Modify each element of the Projected Prior Weight by adding Shifting Weight Factor % of its current value
             // If ShiftingWeightFactor is set to 0, no modification occurs (i.e., each element remains unchanged), and if ShiftingWeightFactor is set to 1, each element would be doubled.
 
