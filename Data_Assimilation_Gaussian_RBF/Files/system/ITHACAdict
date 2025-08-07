@@ -51,7 +51,7 @@ sizeOfTheParameter  5;            // This is the number of parameters or weights
 //Nofsamples          400;        // Kabir: All the ensemble-based methods, in general, tend to converge as we increase the number of samples. 
                                           // Therefore, the number of samples should be as high as possible (the more sample we have usually the more accurate).
 
-basisofShapeParameter 3;          // Kabir: We can operate on this geometrical parameter(shape of RBS) to check it is good enough.
+basisofShapeParameter 0.5;          // Kabir: We can operate on this geometrical parameter(shape of RBS) to check it is good enough.
                                          // Kabir: if the value of the shape parameter is high, it means that the width of the Gaussian function is low, and vice versa.
                                          // Kabir: the shape parameter controls the spread or width of the Gaussian function.
 // 5 out of 100
