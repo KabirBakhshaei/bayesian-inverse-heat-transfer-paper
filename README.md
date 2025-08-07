@@ -105,32 +105,34 @@ blockMesh
 06enKFwDF_3dIHTP  # Run the solver 
 ```
 ### 8. Generated Output Files and Folders After Simulation
-```
 **Folders:**
-  ITHACAoutput/
+```
+ITHACAoutput/
+```
 **Files:**
-  B.npy
-  Btemp.npy
-  condNumber.txt
-  condNumberAutoCovInverse.txt
-  condNumberCrossCov.txt
-  condNumberKalmanGain.txt
-  gTrueMatrix.npy
-  measNoiseCovTotal.txt
-  measurementsMat.npy
-  measurementsMatNoise.npy
-  parameterPriorCov.npy
-  parameterPriorMean.npy
-  parameterPriorMeanWithoutShifting.npy
-  radius_kb.npy
-  replay_pid2156.log
-  Temp.npy
-  Temp2.npy
-  thermocouplesCellsID_mat.txt
-  thermocoupleXValues.npy
-  thermocoupleYValues.npy
-  thermocoupleZValues.npy
-  xyz.npy
+```
+B.npy
+Btemp.npy
+condNumber.txt
+condNumberAutoCovInverse.txt
+condNumberCrossCov.txt
+condNumberKalmanGain.txt
+gTrueMatrix.npy
+measNoiseCovTotal.txt
+measurementsMat.npy
+measurementsMatNoise.npy
+parameterPriorCov.npy
+parameterPriorMean.npy
+parameterPriorMeanWithoutShifting.npy
+radius_kb.npy
+replay_pid2156.log
+Temp.npy
+Temp2.npy
+thermocouplesCellsID_mat.txt
+thermocoupleXValues.npy
+thermocoupleYValues.npy
+thermocoupleZValues.npy
+xyz.npy
 ```
 Once data is generated, postprocessing should be done outside Docker/Singularity using Python, and MATLAB.
 
