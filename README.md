@@ -91,8 +91,6 @@ cd ../paper_respository
 ### 7. Navigate to the Simulation Directory and Run the Solver 
 ```
 cd Data_Assimilation_Multiquadric_RBF/Files/
-# or
-cd Data_Assimilation_Gaussian_RBF/Files/
 ```
 Then load the required modules and compile/run the simulation:
 ```
@@ -104,6 +102,16 @@ wmake             # Compile the solver
 blockMesh
 06enKFwDF_3dIHTP  # Run the solver 
 ```
+For the following directory that uses **Gaussian RBF**, you need to follow some additional steps:
+
+```
+cd Data_Assimilation_Gaussian_RBF/Files/
+```
+Open the file
+```ITHACA-FV-KF/src/ITHACA_FOMPROBLEMS/sequentialIHTP/sequentialIHTP.C```
+inside the file, commant out the line marked ```kabir``` and uncommand the line marked with```unkabir```to switch the configuration to Gaussian RBF mode. 
+This change toggles the reconstruction kernel used by the solver from multiquadric to Gaussian. Recompile ITHACA-FV and Run the simulation as done previously:
+
 ### 8. Generated Output Files and Folders After Simulation
 **Folders:**
 ```
@@ -134,6 +142,7 @@ thermocoupleYValues.npy
 thermocoupleZValues.npy
 xyz.npy
 ```
+
 Once data is generated, postprocessing should be done outside Docker/Singularity using Python, and MATLAB.
 
 ## Postprocessing Guide
