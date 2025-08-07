@@ -101,6 +101,7 @@ source /usr/lib/openfoam/openfoam2412/etc/bashrc            # Load OpenFOAM envi
 source /data/paper_repository/ITHACA-FV/etc/bashrc # Then load ITHACA-FV environment
 wclean
 wmake             # Compile the solver
+blockMesh
 06enKFwDF_3dIHTP  # Run the solver 
 ```
 Once data is generated, postprocessing should be done outside Docker/Singularity using Python, and MATLAB.
